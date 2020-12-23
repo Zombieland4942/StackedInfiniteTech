@@ -6,6 +6,7 @@ function setupLab(baseName,newName)
 
     new_lab_ent.name = newName
     new_lab_ent.inputs = {"deadlock-stack-automation-science-pack", "deadlock-stack-logistic-science-pack", "deadlock-stack-chemical-science-pack", "deadlock-stack-military-science-pack", "deadlock-stack-production-science-pack", "deadlock-stack-utility-science-pack", "deadlock-stack-space-science-pack"}
+    new_lab_ent.minable.result = newName
 
     new_lab_item.name = newName
     new_lab_item.place_result = newName
