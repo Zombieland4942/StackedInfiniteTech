@@ -2,6 +2,7 @@
 Version: 0.0.4
 Date: ????
   Changes:
+    - Fixed issue with the stack size not respecting other mods
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.3
 Date: 2020-12-23

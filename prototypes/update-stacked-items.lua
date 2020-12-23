@@ -2,17 +2,20 @@
 
 function update_science (name)
 
-    local science = util.table.deepcopy(data.raw["item"]["deadlock-stack-" .. name])
+    if data.raw["item"]["deadlock-stack-" .. name] then
 
-    data.raw["item"]["deadlock-stack-" .. name] = nil
+        local science = util.table.deepcopy(data.raw["item"]["deadlock-stack-" .. name])
 
-    science.type = "tool"
-    science.durability = settings.startup["deadlock-stack-size"].value
-    science.durability_description_key = "description.science-pack-remaining-amount-key"
-    science.durability_description_value = "description.science-pack-remaining-amount-value"
+        data.raw["item"]["deadlock-stack-" .. name] = nil
 
-    data:extend({ science })
-    
+        science.type = "tool"
+        science.durability = settings.startup["deadlock-stack-size"].value
+        science.durability_description_key = "description.science-pack-remaining-amount-key"
+        science.durability_description_value = "description.science-pack-remaining-amount-value"
+
+        data:extend({ science })
+
+    end    
 end
 
 update_science("automation-science-pack")
