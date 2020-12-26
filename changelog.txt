@@ -1,7 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.5
-Date: ????
+Date: 2020-12-26
   Changes:
+    - Added compatability with the Creative Mod Infinite Void Tech
+    - Tested Compatability with the Mega Research Test Tech
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.4
 Date: 2020-12-23
