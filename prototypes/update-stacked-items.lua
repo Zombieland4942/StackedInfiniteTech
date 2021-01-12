@@ -25,3 +25,7 @@ update_science("military-science-pack")
 update_science("utility-science-pack")
 update_science("production-science-pack")
 update_science("space-science-pack")
+
+if mods["DeadlockStackingForSchallAlienLoot"] then        
+    update_science("alien-science-pack")
+end

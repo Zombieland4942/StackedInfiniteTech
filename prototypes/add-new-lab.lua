@@ -20,8 +20,12 @@ function setupLab(baseName,newName)
     new_lab_recipe.enabled = false
     new_lab_recipe.result = newName
 
-    data:extend({ new_lab_ent, new_lab_item, new_lab_recipe })
+    if mods["DeadlockStackingForSchallAlienLoot"] then        
+        table.insert(new_lab_ent.inputs, "deadlock-stack-alien-science-pack")
+    end
 
+    data:extend({ new_lab_ent, new_lab_item, new_lab_recipe })
+    
 end
 
 setupLab("lab", "stacked-lab")

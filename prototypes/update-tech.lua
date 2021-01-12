@@ -4,7 +4,11 @@ for x, tech in pairs(data.raw["technology"]) do
         
         for y, ingredient in pairs(tech.unit.ingredients) do
 
-            data.raw["technology"][x].unit.ingredients[y][1] = "deadlock-stack-" .. data.raw["technology"][x].unit.ingredients[y][1]
+            local item = data.raw["item"]["deadlock-stack-" .. data.raw["technology"][x].unit.ingredients[y][1]]
+
+            if item then
+                data.raw["technology"][x].unit.ingredients[y][1] = "deadlock-stack-" .. data.raw["technology"][x].unit.ingredients[y][1]
+            end
 
         end   
     end
