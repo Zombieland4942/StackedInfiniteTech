@@ -1,8 +1,12 @@
 function setupLab(baseName,newName)
     
-    local new_lab_ent = util.table.deepcopy(data.raw["lab"][baseName])
-    local new_lab_item = util.table.deepcopy(data.raw["item"][baseName])
-    local new_lab_recipe = util.table.deepcopy(data.raw["recipe"][baseName])
+    local new_lab_ent = nil
+    local new_lab_item = nil
+    local new_lab_recipe = nil
+
+    new_lab_ent = util.table.deepcopy(data.raw["lab"][baseName])
+    new_lab_item = util.table.deepcopy(data.raw["item"][baseName])
+    new_lab_recipe = util.table.deepcopy(data.raw["recipe"][baseName])
 
     new_lab_ent.name = newName
     new_lab_ent.inputs = {"deadlock-stack-automation-science-pack", "deadlock-stack-logistic-science-pack", "deadlock-stack-chemical-science-pack", "deadlock-stack-military-science-pack", "deadlock-stack-production-science-pack", "deadlock-stack-utility-science-pack", "deadlock-stack-space-science-pack"}
@@ -18,11 +22,13 @@ function setupLab(baseName,newName)
 
     new_lab_recipe.name = newName
     new_lab_recipe.enabled = false
-    new_lab_recipe.result = newName
+    new_lab_recipe.results = { { type = "item", name = newName, amount = 1 } }
 
     if mods["DeadlockStackingForSchallAlienLoot"] then        
         table.insert(new_lab_ent.inputs, "deadlock-stack-alien-science-pack")
     end
+
+    log(serpent.block(new_lab_recipe))
 
     data:extend({ new_lab_ent, new_lab_item, new_lab_recipe })
     

@@ -21,7 +21,7 @@ if mods["creative-mod"] then
     
     --UpdateTech("creative-mod_void-technology")
 
-    log(serpent.block(data.raw["technology"]["creative-mod_void-technology"]))
+    --log(serpent.block(data.raw["technology"]["creative-mod_void-technology"]))
 
     tech = data.raw["technology"]["creative-mod_void-technology"]
 
